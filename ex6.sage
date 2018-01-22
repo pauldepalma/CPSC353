@@ -1,9 +1,8 @@
-#iterative GCD
+#iterators use a modified list comprehension syntax
 
-def GCD(a,b):
-  while (a % b != 0):  #stop when the remainder is 0
-    q = a // b
-    r = a % b
-    a = b   #divisor becomes the dividend 
-    b = r   #remainder becomes the divsor
-  print r   #gcd is last non-zero remainder 
+#iterate over the first 10 primes of the form 4p + 1
+w = (4*p + 1 for p in Primes() if is_prime(4*p+1))
+
+for i in range(10):
+  print next(w)
+
