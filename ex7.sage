@@ -49,7 +49,7 @@ def encrypt(plaintext,public):
 '''
 Pre: param 1 is the ciphertext to be decrypted 
      param 2 is the private key 
-     param 3 is the public key
+     param 3 is a two-tuple holding the public key) 
 Post: ciphertext is returned
 Notes: executed by the message receiver
 '''
