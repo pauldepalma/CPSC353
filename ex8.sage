@@ -1,6 +1,12 @@
 #iterative GCD
 
 def GCD(a,b):
+  if (a < b):  #arithmetic requires a to be greater
+    tmp = a
+    a = b
+    b = tmp
+  if (a % b == 0): #b divides a, so b is gcd
+    r = b 
   while (a % b != 0):  #stop when the remainder is 0
     q = a // b
     r = a % b
