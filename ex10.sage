@@ -62,4 +62,14 @@ print "A more interesting iterator"
 iter2 = (4*p +1 for p in Primes() if is_prime(4*p+1))
 for i in range(10):
   print next(iter2)
-print
+
+print "A dictionary comprehension"
+#list composed of the alphabet 
+keys = [chr(i) for i in range(ord('A'),ord('Z'))]
+#list composed of a permuted alphabet 
+values = Permutations(keys).random_element()
+#dictionary where item in alphabet are keys and item in values are values
+dict = {k: v for k, v in zip(keys,values)}  
+#display dict as a sequence of tuples
+for item in dict.items(): 
+ print item
