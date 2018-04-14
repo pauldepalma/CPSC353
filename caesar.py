@@ -1,3 +1,4 @@
+
 def encrypt(ch,key):
     pos = ord(ch) - ord('A')
     pos = (pos + key) % 26
@@ -12,17 +13,19 @@ def decrypt(ch,key):
 
 def main():
     key = 3
-    plain = 'GONZAGA'
+    plain = 'GONZAGA U'
     cipher = []
     for ch in plain:
-        ch = encrypt(ch,key)
+        if str.isupper(ch):
+            ch = encrypt(ch,key)
         cipher.append(ch)
     cipher_out = ''.join(cipher)
     print 'Cipher Text: ' + cipher_out
 
     plain = []
     for ch in cipher:
-        ch = decrypt(ch,key)
+        if str.isupper(ch):
+            ch = decrypt(ch,key)
         plain.append(ch)
     plain_out = ''.join(plain)
     print 'Plain Text: ' + plain_out
