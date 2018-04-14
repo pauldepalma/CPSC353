@@ -1,3 +1,22 @@
+def gen_key_rsa(size):
+  p = random_prime( (2^size)-1,True,2^(size-1) )
+  q = random_prime( (2^size)-1,True,2^(size-1) )
+  n = p*q
+  e = 17 
+  d = inverse_mod(e,(p-1)*(q-1))
+  return n,e,d
+ 
+def enc_rsa(plain_txt,e,n):
+  m = txt_to_num(plain_txt) 
+  cipher_txt = power_mod(m,e,n)
+  return cipher_txt 
+
+def dec_rsa(c,d,n):
+  m = power_mod(c,d,n)
+  plain_txt = num_to_txt(m)
+  return plain_txt
+
+    
 #Converts a string to a digit sequence
 #Returns the digit sequence 
 
@@ -23,4 +42,5 @@ def num_to_txt(num_in):
   #transforms the list to a string
   m = ''.join(m)
   return m
+  
   
