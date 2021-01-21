@@ -1,13 +1,25 @@
 '''
-Kid RSA, a simplified version of RSA.  Found in McAndrew, p. 12 
-'''
+Kid RSA, a non-number theory version of RSA.  Found in McAndrew, p. 12 
+
+Load the file
+Then run the functions
+
+For example, to run with the values from McAndrew:
+
+sage: print(make_keys(0))
+
+The private and public keys are displayed
 
 '''
-Pre:  gen is a boolean variable 
-Post: if gen is True, internal variables are generated
-       if gen is False, internal varialbes hold values from McAndrew, p. 13 
+
+
+'''
+Pre:   gen is a boolean variable 
+Post:  public key (n,e) and private key (d) are generated 
+Notes: if gen is True, internal variables are generated
+       if gen is False, internal variables hold values from McAndrew, p. 13 
        public and private keys are generated  
-Notes: Executed by the message sender 
+       Executed by Alice who presumably posts her public key
 '''
 def make_keys(gen):
     if gen: 
@@ -37,10 +49,10 @@ def choose_rand(start,stop):
   return(a,b,A,B)
 
 '''
-Pre: param 1 is the plaintext to be encrypted
+Pre:  param 1 is the plaintext to be encrypted
       param 2 is a 2-tuple holding the public key 
 Post: ciphertext is returned
-Notes: Executed by the message sender
+Notes: Executed by Bob using Alice's public key. 
 '''
 def encrypt(plaintext,public):
   ciphertext = (plaintext * public[1] % public[0]) 
@@ -51,7 +63,7 @@ Pre: param 1 is the ciphertext to be decrypted
      param 2 is the private key 
      param 3 is a two-tuple holding the public key) 
 Post: ciphertext is returned
-Notes: executed by the message receiver
+Notes: executed by Alice who has the private key 
 '''
 def decrypt(ciphertext,private,public):
   plaintext = (ciphertext * private % public[0]) 

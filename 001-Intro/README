@@ -1,0 +1,11 @@
+To bring up sage from the command line:
+
+csuser-> sage
+
+To quit:
+
+csuser-> quit()
+
+To run a program stored in a file with the extension "sage"
+
+sage: load("program.sage")
