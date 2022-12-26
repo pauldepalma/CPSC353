@@ -1,3 +1,8 @@
+import random 
+
+def genKey():
+    key = randint(1,25) 
+    return key
 
 def encrypt(ch,key):
     pos = ord(ch) - ord('A')
@@ -12,25 +17,18 @@ def decrypt(ch,key):
     return chr(pos)
 
 def main():
-    print("Enter a key in the range [1..25]")
-    key =int(input())
+    key = genKey()
+    
     print("Enter plaintext")
-    plain = input()
-    cipher = []
-    for ch in plain:
-        if str.isupper(ch):
-            ch = encrypt(ch,key)
-        cipher.append(ch)
-    cipher_out = ''.join(cipher)  #transform list to string
-    print ('Cipher Text: ' + cipher_out)
+    plain = input().upper()  #convert all lower case alpha to upper
 
-    plain = []
-    for ch in cipher:
-        if str.isupper(ch):
-            ch = decrypt(ch,key)
-        plain.append(ch)
-    plain_out = ''.join(plain)
-    print ('Plain Text: ' + plain_out)
+    cipher_lst = [encrypt(ch,key) if ch.isupper() else ch for ch in plain]
+    cipher = ''.join(cipher_lst)  #transform list to string
+    print ('Cipher Text: ' + cipher)
+
+    plain_lst = [decrypt(ch,key) if ch.isupper() else ch for ch in cipher]
+    plain = ''.join(plain_lst)
+    print ('Plain Text: ' + plain)
     
 
 main()
