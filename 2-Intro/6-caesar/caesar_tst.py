@@ -29,13 +29,14 @@ def write_key(file_name):
     key = ciph.key_gen()
     key_file.write(str(key))
     key_file.close()
-
-#usage: python3 caesar_tst.py mode key_file input output
+'''
+usage: python3 caesar_tst.py mode key_file input output
 #where:
  mode is enc or dec
  key_file is the name of the file containing the key
  input is the name of the file containing text to be encrypted/decrypted
  output is the name of the file containing the result of the encrypt/decrypt operation 
+'''
 def main():
     #generate, store key
     if len(sys.argv) == 2:
