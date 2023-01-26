@@ -1,0 +1,6 @@
+process :
+	sage control.sage enc key_file input output
+
+clean :
+	rm *.py
+	rm -r __pycache__

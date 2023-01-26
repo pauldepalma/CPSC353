@@ -1,3 +1,3 @@
-sage caesar_tst.sage enc key_file input output
+sage conrol.sage enc key_file input output
 rm *.py
 rm -r __pycache__
