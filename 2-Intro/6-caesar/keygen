@@ -1,0 +1,3 @@
+sage control.sage key_file 
+rm *.py
+rm -r __pycache__

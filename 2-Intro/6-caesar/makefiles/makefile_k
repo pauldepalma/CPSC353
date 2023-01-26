@@ -1,0 +1,9 @@
+process :
+	sage control.sage key_file
+
+
+clean :
+	rmdir *pycache*
+
+clean :
+	rm *.py

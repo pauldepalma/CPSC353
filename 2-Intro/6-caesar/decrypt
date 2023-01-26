@@ -1,0 +1,3 @@
+sage caesar_tst.sage dec key_file output plain
+rm *.py
+rm -r __pycache__
