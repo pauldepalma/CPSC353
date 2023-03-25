@@ -41,6 +41,7 @@ usage: python3 caesar_tst.py mode key_file input output
  output is the name of the file containing the result of the encrypt/decrypt operation 
 '''
 def main():
+    print(args)
     #generate, store key
     if len(sys.argv) == 2:
         write_key(sys.argv[1])
