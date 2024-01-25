@@ -1,3 +1,4 @@
+#This is a work in progress
 def key_gen(pt):
   return makeMatrix(pt) 
 
@@ -41,7 +42,6 @@ def makeMatrix(pt):
   Mpl = matrix(SR,len(pt_lst)/n,n,pt_lst)
   Mpl = transpose(Mpl)
   return Mpl 
-
 
 
 '''

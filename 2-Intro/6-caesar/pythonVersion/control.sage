@@ -18,6 +18,7 @@ def process(args):
     for ch in data:
         if (ch.isalpha()):
             if (mode == 'enc'):
+                #ch = ciph.encrypt(ch,key)
                 ch = ciph.encrypt(ch,key)
             if (mode == 'dec'):
                 ch = ciph.decrypt(ch,key)

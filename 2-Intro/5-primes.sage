@@ -1,4 +1,4 @@
-#primes 3 ways
+print("primes 3 ways")
 
 #first 10 primes
 print(primes_first_n(10))

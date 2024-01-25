@@ -1,11 +1,12 @@
-#Generate the alphabet
+print("Generate the alphabet")
 lst = [chr(i) for i in range( ord('A'), (ord('Z') + 1 ) ) ]
 print(lst)
 
-#Permute the list using a Sage function
+print("Generate a permuted list")
 lstP = Permutations(lst).random_element()
 print(lstP)
 
+print("Here the dictionary")
 #Alphabet is key, permuted alphabet is the value
 dict = {lst[i]:lstP[i] for i in range(26)}
 print(dict)
