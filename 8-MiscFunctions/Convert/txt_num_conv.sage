@@ -1,4 +1,3 @@
-    
 #Converts a string to a decimal digit sequence
 #msg_in is a string
 def txt_to_num(msg_in):      

@@ -1,10 +1,3 @@
-#First line converts string found in input to num to be written to output
-#Second line converts num found in output to string to be found in input1
-
-sage control.sage txt input output input1 
-#sage control.sage num input output input1 
-DIR=$1
-if [ "$(ls -A $DIR)" ]; then 
- rm *.py
- rm -r __pycache__
-fi
+sage control.sage $1 $2 $3 
+rm *.py
+rm -r __pycache__
