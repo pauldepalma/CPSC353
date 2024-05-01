@@ -1,0 +1,10 @@
+To convert a string to an integer usable by one of our public key ciphers,
+--store the string in a file which will be the second command line argument,
+  'input' in the following example: 
+--type at the command line: ./convert txt input output
+--output will hold the integer sequence
+
+To convert the integer sequence back into the the original string 
+--type at the command line: ./convert num output input1
+--input1 will hold the original string
+--if all went well, inpu1 will be the same as input 
